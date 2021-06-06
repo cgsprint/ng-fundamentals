@@ -1,6 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ToastrService } from './common/toastr.service';
+import { TOASTER_TOKEN, Toastr } from './common/toastr.service';
 import { RouterModule } from "@angular/router";
 
 import { 
@@ -24,6 +24,9 @@ import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CollapsibleWellComponent } from './common/collapsible-well.component';
 
+// declare let toastr:Toastr
+let toastr:Toastr = window['toastr'];
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -46,7 +49,7 @@ import { CollapsibleWellComponent } from './common/collapsible-well.component';
   ],
   providers: [
     EventService,
-    ToastrService,
+    { provide: TOASTER_TOKEN, useValue: toastr},
     EventRouteActivator,
     EventListResolver,
     AuthService,
