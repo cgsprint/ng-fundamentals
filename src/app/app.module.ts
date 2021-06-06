@@ -1,6 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { JQ_TOKEN, TOASTER_TOKEN, Toastr, CollapsibleWellComponent, SimpleModalComponent } from "./common/index";
+
 import { RouterModule } from "@angular/router";
 
 import { 
@@ -16,6 +16,13 @@ import {
   DurationPipe
 } from "./events/index";
 
+import { 
+  JQ_TOKEN, 
+  TOASTER_TOKEN, 
+  Toastr, 
+  CollapsibleWellComponent, 
+  SimpleModalComponent,
+  ModalTriggerDirective } from "./common/index";
 
 
 import { EventsAppComponent } from './event-app.component';
@@ -49,7 +56,8 @@ let jQuery:Toastr = window['$'];
     SessionListComponent,
     CollapsibleWellComponent,
     DurationPipe,
-    SimpleModalComponent
+    SimpleModalComponent,
+    ModalTriggerDirective
   ],
   providers: [
     EventService,

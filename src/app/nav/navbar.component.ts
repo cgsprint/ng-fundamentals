@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { $ } from "protractor";
 import { EventService, ISession } from "../events";
 import { AuthService } from "../user/auth.service";
 
@@ -17,14 +18,14 @@ export class NavBarComponent {
     searchTerm: string = "";
     foundSessions: ISession[];
     constructor(public authService:AuthService, private eventService:EventService){
-
+       
     }
+
 
     searchSessions(searchTerm){
         this.eventService.searchSessions(searchTerm).subscribe(
             sessions => {
                 this.foundSessions = sessions;
-                console.log(this.foundSessions);
             }
         )
     }
