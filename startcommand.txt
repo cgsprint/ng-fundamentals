@@ -1,1 +1,5 @@
 npm run ng serve => to start the server
+
+After adding proxy
+1. npm run server
+2. npm start
