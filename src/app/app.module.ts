@@ -10,14 +10,14 @@ import {
   EventService,
   EventDetailsComponent,
   CreateEventComponent,
-  EventRouteActivator,
   EventListResolver,
   CreateSessionComponent,
   SessionListComponent,
   UpvoteComponent,
   DurationPipe,
   voterService,
-  LocationValidator
+  LocationValidator,
+  EventResolver
 } from "./events/index";
 
 import { 
@@ -70,7 +70,7 @@ let jQuery:Toastr = window['$'];
     EventService,
     { provide: TOASTER_TOKEN, useValue: toastr},
     { provide: JQ_TOKEN, useValue: jQuery},
-    EventRouteActivator,
+    EventResolver,
     EventListResolver,
     AuthService,
     voterService,
