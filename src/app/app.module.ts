@@ -38,8 +38,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { CollapsibleWellComponent } from './common/collapsible-well.component';
 
 // declare let toastr:Toastr
-let toastr:Toastr = window['toastr'];
-let jQuery:Toastr = window['$'];
+const toastr:Toastr = window['toastr'];
+const jQuery:Toastr = window['$'];
 
 @NgModule({
   imports: [
