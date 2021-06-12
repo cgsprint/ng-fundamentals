@@ -1,5 +1,6 @@
 import { DebugElement } from "@angular/core"
 import { ComponentFixture, TestBed } from "@angular/core/testing"
+import { By } from "@angular/platform-browser"
 
 import { AuthService } from "src/app/user/auth.service"
 import { voterService } from "."
@@ -51,6 +52,7 @@ describe('SessionListComponent', ()=> {
             fixture.detectChanges();
 
             expect(element.querySelector('[well-title]').textContent).toContain('Session 1')
+            expect(debugEl.query(By.css('[well-title]')).nativeElement.textContent).toContain('Session 1')
         })
     })
 })
