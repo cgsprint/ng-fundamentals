@@ -1,12 +1,13 @@
-import { DebugElement } from "@angular/core"
+import { Component, DebugElement, Input, NO_ERRORS_SCHEMA } from "@angular/core"
 import { ComponentFixture, TestBed } from "@angular/core/testing"
 import { By } from "@angular/platform-browser"
+import { CollapsibleWellComponent } from "src/app/common"
 
 import { AuthService } from "src/app/user/auth.service"
 import { voterService } from "."
 import { DurationPipe } from "../shared"
 import { SessionListComponent } from "./session-list.component"
-
+import { UpvoteComponent } from "./upvote.component"
 
 describe('SessionListComponent', ()=> {
 
@@ -28,6 +29,9 @@ describe('SessionListComponent', ()=> {
             providers: [
                 { provide: AuthService, useValue: mockAuthService},
                 { provide: voterService, useValue: mockVoterService}
+            ],
+            schemas: [
+                NO_ERRORS_SCHEMA
             ]
         });
 
